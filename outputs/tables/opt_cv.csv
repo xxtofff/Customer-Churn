@@ -1,0 +1,6 @@
+,CV F1
+LogisticRegression,0.488648586
+RandomForest,0.825803333
+XGBoost,0.839600142
+CatBoost,0.855481878
+LightGBM,0.8457122
