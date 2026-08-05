@@ -23,7 +23,7 @@ This project was developed and tested using **Python 3.9.13**.
 ### Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/Customer-Churn.git
+git clone https://github.com/xxtofff/Customer-Churn.git
 cd Customer-Churn
 ```
 
