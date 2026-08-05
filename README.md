@@ -18,7 +18,7 @@ LightGBM achieved the highest precision (0.940) and the best hold-out F1 score (
 
 ## Installation
 
-This project was developed and tested using **Python 3.9**.
+This project was developed and tested using **Python 3.9.13**.
 
 ### Clone the repository
 
