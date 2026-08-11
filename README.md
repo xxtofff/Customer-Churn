@@ -62,7 +62,8 @@ Generated figures are saved to `outputs/figures/`, while prediction tables and e
 ## Project Structure
 
 ```text
-.
+Customer-Churn
+│  
 ├── data
 │   ├── processed
 │   │   ├── churn_holdout.csv
