@@ -139,3 +139,8 @@ Models are evaluated using cross-validation during hyperparameter optimization a
 ## Data Source
 
 * BigQuery Customer Churn Dataset (Kaggle): https://www.kaggle.com/datasets/mustafakeser4/bigquery-churn-dataset
+
+## License
+
+The source code in this repository is licensed under the MIT License.
+The dataset remains subject to its original license and terms; see the Data Source section.
