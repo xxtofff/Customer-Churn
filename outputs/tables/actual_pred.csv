@@ -30,7 +30,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,0,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
-0,1,1,1,0,0
+0,1,1,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
@@ -263,7 +263,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,1,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
-1,1,0,0,0,0
+1,1,0,1,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
@@ -287,7 +287,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,0,0,0,0,0
 1,1,1,1,1,1
 0,0,0,0,0,0
-0,1,0,1,1,1
+0,1,0,0,1,1
 0,0,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
@@ -319,7 +319,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,1,0,0,0,0
 0,0,0,0,0,0
 0,1,0,0,0,0
-0,0,0,1,0,0
+0,0,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
@@ -381,7 +381,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,0,0,0,0,0
 0,0,0,0,0,0
 1,0,0,0,0,0
-0,1,1,0,0,0
+0,1,1,1,0,0
 0,1,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
@@ -391,7 +391,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,0,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
-1,1,0,1,1,1
+1,1,0,0,1,1
 0,0,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
@@ -484,7 +484,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,0,0,0,0,0
 1,1,1,1,0,1
 1,1,1,1,1,1
-1,1,0,1,1,1
+1,1,0,0,1,1
 1,0,1,1,1,1
 1,0,0,0,0,0
 0,1,0,1,0,0
@@ -556,7 +556,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,0,0,0,0,0
 0,0,0,0,0,0
 1,1,1,1,1,1
-1,1,1,0,1,0
+1,1,1,1,1,0
 0,1,0,0,0,0
 0,1,0,0,0,0
 0,1,0,0,0,0
@@ -591,7 +591,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,0,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
-0,1,0,0,0,0
+0,1,0,1,0,0
 0,0,0,0,0,0
 0,1,0,0,0,0
 0,1,0,0,0,0
@@ -643,7 +643,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,0,0,0,0,0
 0,0,0,0,0,0
 0,1,0,0,0,0
-0,1,1,0,0,0
+0,1,1,1,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
 1,1,0,1,1,1
@@ -817,7 +817,7 @@ Actual,LogisticRegression,RandomForest,XGBoost,CatBoost,LightGBM
 0,0,0,0,0,0
 0,1,0,0,1,1
 0,0,0,0,0,0
-0,1,0,1,0,0
+0,1,0,0,0,0
 0,0,0,0,0,0
 0,0,0,0,0,0
 1,1,1,1,1,1

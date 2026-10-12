@@ -1,24 +1,24 @@
 # Customer Churn Prediction
 
-A supervised machine learning project that predicts customer churn in a telecommunications dataset using classification models. The project covers data preparation, exploratory data analysis (EDA), preprocessing, model development, hyperparameter optimization, threshold tuning, and model evaluation. Multiple tree-based ensemble models are compared against a linear baseline to identify customers at risk of churning.
+A supervised machine learning project that predicts customer churn in a telecommunications dataset using classification models. The project covers data preparation, exploratory data analysis (EDA), preprocessing, model development, hyperparameter optimization, and model evaluation. Multiple tree-based ensemble models are compared against a linear baseline to identify customers at risk of churning.
 
 ## Model Comparison
 
-Performance of the evaluated models on the hold-out test set.
+The table below summarizes the performance of the evaluated models on the hold-out test set. The models used the default decision threshold, $0.5$.
 
-| Model | Precision ↑ | Recall ↑ | F1 Score ↑ | CV F1 ↑ |
-|:------|------------:|----------:|-----------:|---------:|
-| Logistic Regression | 0.341 | 0.758 | 0.470 | 0.489 |
-| Random Forest | 0.903 | 0.775 | 0.834 | 0.826 |
-| XGBoost | 0.913 | **0.792** | 0.848 | 0.840 |
-| CatBoost | 0.929 | 0.758 | 0.835 | **0.855** |
-| **LightGBM** | **0.940** | 0.783 | **0.855** | 0.846 |
+| Model | Precision (95% CI) ↑ | Recall (95% CI) ↑ | F1 Score (95% CI) ↑ | CV F1 ↑ |
+|:--|--:|--:|--:|--:|
+| Logistic Regression | 0.341 [0.285, 0.398] | 0.758 [0.679, 0.832] | 0.470 [0.407, 0.531] | 0.489 |
+| Random Forest | 0.903 [0.843, 0.957] | 0.775 [0.699, 0.848] | 0.834 [0.778, 0.883] | 0.826 |
+| XGBoost | 0.922 [0.865, 0.970] | **0.792 [0.718, 0.862]** | 0.852 [0.800, 0.900] | 0.849 |
+| CatBoost | 0.929 [0.874, 0.974] | 0.758 [0.681, 0.833] | 0.835 [0.779, 0.885] | **0.855** |
+| **LightGBM** | **0.940 [0.889, 0.981]** | 0.783 [0.707, 0.855] | **0.855 [0.800, 0.901]** | 0.846 |
 
-LightGBM achieved the highest precision (0.940) and the best hold-out F1 score (0.855), indicating the best overall performance on unseen data. XGBoost obtained the highest recall (0.792), identifying the largest proportion of customers who churned, while CatBoost achieved the highest cross-validation F1 score (0.855). Although CatBoost performed slightly better during cross-validation, LightGBM generalized better to the hold-out dataset and was selected as the final model.
+LightGBM achieved the highest precision (0.940) and the best holdout F1 score (0.855). XGBoost obtained the highest recall (0.792), identifying the largest proportion of customers who churned, while CatBoost achieved the highest cross-validation F1 score (0.855). However, the holdout F1 scores of these three models differ only slightly, and their 95% bootstrap confidence intervals overlap heavily. These results do not establish a clear performance advantage for any one of the three models, so practical considerations would guide final model selection.
 
 ## Installation
 
-This project was developed and tested using **Python 3.9.13**.
+This project was developed and tested using **Python 3.14.7**.
 
 ### Clone the repository
 
@@ -29,24 +29,31 @@ cd Customer-Churn
 
 ### Create a virtual environment
 
-**Windows**
+**Windows (PowerShell)**
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
+```powershell
+py -3.14 -m venv .venv
+.\.venv\Scripts\Activate.ps1
 ```
 
 **Linux/macOS**
 
 ```bash
-python3 -m venv .venv
+python3.14 -m venv .venv
 source .venv/bin/activate
 ```
 
 ### Install dependencies
 
 ```bash
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+To verify your Python version, run:
+
+```bash
+python --version
 ```
 
 ## Quick Start
@@ -57,7 +64,7 @@ Run the notebooks in the following order. Each notebook builds upon the outputs 
 2. `02_modeling.ipynb`
 3. `03_report.ipynb`
 
-Generated figures are saved to `outputs/figures/`, while prediction tables and evaluation metrics are saved to `outputs/tables/`.
+Generated figures are saved to `outputs/figures/`, while tables are saved to `outputs/tables/`.
 
 ## Project Structure
 
@@ -80,20 +87,12 @@ Customer-Churn
 │   ├── 01_data_preparation.ipynb
 │   ├── 02_modeling.ipynb
 │   ├── 03_report.ipynb
-│   └── catboost_info
-│       ├── learn
-│       ├── learn_error.tsv
-│       ├── catboost_training.json
-│       ├── time_left.tsv
-│       └── tmp
 ├── outputs
 │   ├── figures
 │   │   ├── confusion_matrix.jpg
 │   │   ├── confusion_matrix.png
 │   │   ├── LGBM_feats.jpg
 │   │   ├── LGBM_feats.png
-│   │   ├── LGBM_thresh.jpg
-│   │   ├── LGBM_thresh.png
 │   │   ├── PR.jpg
 │   │   ├── PR.png
 │   │   ├── ROC.jpg
@@ -124,7 +123,6 @@ Customer-Churn
    * Train **Logistic Regression**, **Random Forest**, **XGBoost**, **CatBoost**, and **LightGBM** classifiers.
    * Optimize hyperparameters using **RandomizedSearchCV** with cross-validation.
    * Evaluate models using Precision, Recall, and F1 Score.
-   * Tune the classification threshold to improve churn detection.
    * Analyze feature importance using LightGBM.
 
 4. **Reporting**
@@ -135,7 +133,7 @@ Customer-Churn
 
 ## Model Evaluation
 
-Models are evaluated using cross-validation during hyperparameter optimization and a final hold-out test set for unbiased performance assessment. Since customer churn is an imbalanced classification problem, model selection primarily focuses on the **F1 Score**, while **Precision** and **Recall** are also reported to quantify the trade-off between identifying churning customers and minimizing false positives.
+Models are evaluated using cross-validation during hyperparameter optimization and a separate holdout dataset for comparative performance evaluation. Since customer churn is an imbalanced classification problem, performance is assessed mainly using the F1 score, while precision and recall quantify the trade-off between identifying churning customers and minimizing false positives. The reported classification metrics use the default decision threshold of 0.5.
 
 ## Data Source
 
