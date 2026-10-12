@@ -123,13 +123,11 @@ Customer-Churn
    * Train **Logistic Regression**, **Random Forest**, **XGBoost**, **CatBoost**, and **LightGBM** classifiers.
    * Optimize hyperparameters using **RandomizedSearchCV** with cross-validation.
    * Evaluate models using Precision, Recall, and F1 Score.
-   * Analyze feature importance using LightGBM.
 
 4. **Reporting**
 
    * Compare model performance.
-   * Generate ROC, Precision-Recall, confusion matrix, threshold optimization, and feature importance plots.
-   * Save predictions and evaluation tables.
+   * Generate ROC, Precision-Recall, confusion matrix, and feature importance plots.
 
 ## Model Evaluation
 
