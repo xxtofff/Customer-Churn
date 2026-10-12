@@ -6,7 +6,7 @@ A supervised machine learning project that predicts customer churn in a telecomm
 
 The table below summarizes the performance of the evaluated models on the hold-out test set. The models used the default decision threshold, $0.5$.
 
-| Model | Precision (95% CI) ↑ | Recall (95% CI) ↑ | F1 Score (95% CI) ↑ | CV F1 ↑ |
+| Model | Precision (95% CI) | Recall (95% CI) | F1 Score (95% CI) | CV F1 |
 |:--|--:|--:|--:|--:|
 | Logistic Regression | 0.341 [0.285, 0.398] | 0.758 [0.679, 0.832] | 0.470 [0.407, 0.531] | 0.489 |
 | Random Forest | 0.903 [0.843, 0.957] | 0.775 [0.699, 0.848] | 0.834 [0.778, 0.883] | 0.826 |
